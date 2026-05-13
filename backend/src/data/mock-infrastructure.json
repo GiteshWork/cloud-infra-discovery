@@ -1,0 +1,365 @@
+{
+  "ingested_at": "2026-05-08T00:00:00Z",
+  "source": "mock-aws-account-123456",
+  "resources": [
+    {
+      "id": "ec2-001",
+      "name": "web-server-prod-1",
+      "type": "EC2",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "running",
+      "cost_per_month": 245.00,
+      "tags": { "env": "production", "team": "backend" },
+      "metadata": {
+        "instance_type": "t3.medium",
+        "vcpus": 2,
+        "memory_gb": 4,
+        "os": "Amazon Linux 2"
+      }
+    },
+    {
+      "id": "ec2-002",
+      "name": "web-server-prod-2",
+      "type": "EC2",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "running",
+      "cost_per_month": 245.00,
+      "tags": { "env": "production", "team": "backend" },
+      "metadata": {
+        "instance_type": "t3.medium",
+        "vcpus": 2,
+        "memory_gb": 4,
+        "os": "Amazon Linux 2"
+      }
+    },
+    {
+      "id": "ec2-003",
+      "name": "api-server-prod",
+      "type": "EC2",
+      "category": "compute",
+      "region": "us-west-2",
+      "status": "running",
+      "cost_per_month": 490.00,
+      "tags": { "env": "production", "team": "api" },
+      "metadata": {
+        "instance_type": "t3.large",
+        "vcpus": 4,
+        "memory_gb": 8,
+        "os": "Ubuntu 22.04"
+      }
+    },
+    {
+      "id": "ec2-004",
+      "name": "batch-worker-staging",
+      "type": "EC2",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "stopped",
+      "cost_per_month": 0,
+      "tags": { "env": "staging", "team": "data" },
+      "metadata": {
+        "instance_type": "m5.xlarge",
+        "vcpus": 4,
+        "memory_gb": 16,
+        "os": "Amazon Linux 2"
+      }
+    },
+    {
+      "id": "ecs-001",
+      "name": "checkout-service",
+      "type": "ECS_CONTAINER",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "running",
+      "cost_per_month": 180.00,
+      "tags": { "env": "production", "team": "platform" },
+      "metadata": {
+        "cluster": "prod-cluster",
+        "task_definition": "checkout:12",
+        "desired_count": 3
+      }
+    },
+    {
+      "id": "ecs-002",
+      "name": "notification-service",
+      "type": "ECS_CONTAINER",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "running",
+      "cost_per_month": 95.00,
+      "tags": { "env": "production", "team": "platform" },
+      "metadata": {
+        "cluster": "prod-cluster",
+        "task_definition": "notification:7",
+        "desired_count": 2
+      }
+    },
+    {
+      "id": "lambda-001",
+      "name": "image-resize-fn",
+      "type": "LAMBDA",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 12.50,
+      "tags": { "env": "production", "team": "media" },
+      "metadata": {
+        "runtime": "nodejs18.x",
+        "memory_mb": 512,
+        "timeout_sec": 30
+      }
+    },
+    {
+      "id": "lambda-002",
+      "name": "send-email-fn",
+      "type": "LAMBDA",
+      "category": "compute",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 8.00,
+      "tags": { "env": "production", "team": "platform" },
+      "metadata": {
+        "runtime": "python3.11",
+        "memory_mb": 256,
+        "timeout_sec": 10
+      }
+    },
+    {
+      "id": "s3-001",
+      "name": "prod-assets-bucket",
+      "type": "S3",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 320.00,
+      "tags": { "env": "production", "team": "media" },
+      "metadata": {
+        "size_gb": 4096,
+        "versioning": true,
+        "storage_class": "STANDARD"
+      }
+    },
+    {
+      "id": "s3-002",
+      "name": "prod-logs-bucket",
+      "type": "S3",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 85.00,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "size_gb": 1100,
+        "versioning": false,
+        "storage_class": "STANDARD_IA"
+      }
+    },
+    {
+      "id": "s3-003",
+      "name": "backup-cold-storage",
+      "type": "S3",
+      "category": "storage",
+      "region": "us-west-2",
+      "status": "active",
+      "cost_per_month": 45.00,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "size_gb": 2200,
+        "versioning": false,
+        "storage_class": "GLACIER"
+      }
+    },
+    {
+      "id": "rds-001",
+      "name": "primary-postgres-db",
+      "type": "RDS",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 980.00,
+      "tags": { "env": "production", "team": "backend" },
+      "metadata": {
+        "engine": "postgres",
+        "engine_version": "15.3",
+        "instance_class": "db.m5.large",
+        "storage_gb": 500,
+        "multi_az": true
+      }
+    },
+    {
+      "id": "rds-002",
+      "name": "analytics-mysql-db",
+      "type": "RDS",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 420.00,
+      "tags": { "env": "production", "team": "data" },
+      "metadata": {
+        "engine": "mysql",
+        "engine_version": "8.0",
+        "instance_class": "db.t3.medium",
+        "storage_gb": 200,
+        "multi_az": false
+      }
+    },
+    {
+      "id": "ebs-001",
+      "name": "web-server-root-vol",
+      "type": "EBS_VOLUME",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "in-use",
+      "cost_per_month": 16.00,
+      "tags": { "env": "production", "team": "backend" },
+      "metadata": {
+        "size_gb": 50,
+        "volume_type": "gp3",
+        "iops": 3000
+      }
+    },
+    {
+      "id": "ebs-002",
+      "name": "orphaned-old-volume",
+      "type": "EBS_VOLUME",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": null,
+      "tags": {},
+      "metadata": {
+        "size_gb": 100,
+        "volume_type": "gp2",
+        "iops": 300
+      }
+    },
+    {
+      "id": "elasticache-001",
+      "name": "session-cache-redis",
+      "type": "ELASTICACHE",
+      "category": "storage",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 145.00,
+      "tags": { "env": "production", "team": "backend" },
+      "metadata": {
+        "engine": "redis",
+        "node_type": "cache.t3.medium",
+        "num_nodes": 2
+      }
+    },
+    {
+      "id": "vpc-001",
+      "name": "prod-vpc",
+      "type": "VPC",
+      "category": "networking",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 0,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "cidr": "10.0.0.0/16",
+        "subnets": 6,
+        "availability_zones": 3
+      }
+    },
+    {
+      "id": "alb-001",
+      "name": "prod-application-lb",
+      "type": "ALB",
+      "category": "networking",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 185.00,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "scheme": "internet-facing",
+        "listeners": ["HTTP:80", "HTTPS:443"],
+        "target_groups": 3
+      }
+    },
+    {
+      "id": "cloudfront-001",
+      "name": "cdn-distribution",
+      "type": "CLOUDFRONT",
+      "category": "networking",
+      "region": "global",
+      "status": "deployed",
+      "cost_per_month": 320.00,
+      "tags": { "env": "production", "team": "media" },
+      "metadata": {
+        "origins": 2,
+        "price_class": "PriceClass_100",
+        "https_only": true
+      }
+    },
+    {
+      "id": "route53-001",
+      "name": "primary-hosted-zone",
+      "type": "ROUTE53",
+      "category": "networking",
+      "region": "global",
+      "status": "active",
+      "cost_per_month": 0.50,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "record_count": 24,
+        "dnssec": false
+      }
+    },
+    {
+      "id": "nat-001",
+      "name": "nat-gateway-az1",
+      "type": "NAT_GATEWAY",
+      "category": "networking",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 148.00,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "connectivity_type": "public",
+        "elastic_ip": "3.91.24.10"
+      }
+    },
+    {
+      "id": "nat-002",
+      "name": "nat-gateway-az2",
+      "type": "NAT_GATEWAY",
+      "category": "networking",
+      "region": "us-east-1",
+      "status": "available",
+      "cost_per_month": 148.00,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "connectivity_type": "public",
+        "elastic_ip": "18.215.63.7"
+      }
+    },
+    {
+      "id": "sg-001",
+      "name": "web-server-sg",
+      "type": "SECURITY_GROUP",
+      "category": "networking",
+      "region": "us-east-1",
+      "status": "active",
+      "cost_per_month": 0,
+      "tags": { "env": "production", "team": "devops" },
+      "metadata": {
+        "inbound_rules": 3,
+        "outbound_rules": 1
+      }
+    },
+    {
+      "id": "unknown-001",
+      "name": "mystery-resource",
+      "type": "CUSTOM_APPLIANCE",
+      "region": "eu-west-1",
+      "status": "unknown",
+      "cost_per_month": "not-a-number",
+      "tags": {},
+      "metadata": {}
+    }
+  ]
+}

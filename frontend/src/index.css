@@ -1,0 +1,32 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface-2: #22263a;
+  --border: #2e3349;
+  --text: #e2e8f0;
+  --text-muted: #8892a4;
+  --compute: #6366f1;
+  --compute-bg: rgba(99,102,241,0.12);
+  --storage: #10b981;
+  --storage-bg: rgba(16,185,129,0.12);
+  --networking: #f59e0b;
+  --networking-bg: rgba(245,158,11,0.12);
+  --unknown: #6b7280;
+  --unknown-bg: rgba(107,114,128,0.12);
+  --accent: #6366f1;
+  --green: #10b981;
+  --red: #ef4444;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+button { cursor: pointer; font-family: inherit; }
